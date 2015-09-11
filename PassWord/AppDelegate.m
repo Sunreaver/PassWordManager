@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "PwdData.h"
+#import "UserDef.h"
+#import "VerificationTouchIDVC.h"
+#import "SecurityStrategy.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +21,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window.layer.masksToBounds = YES;
+    self.window.layer.cornerRadius = 5;
     return YES;
 }
 
@@ -28,6 +34,9 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    [SecurityStrategy addBlurEffect];
+    [PwdData storageData];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -36,6 +45,16 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    [SecurityStrategy removeBlurEffect];
+    
+    [(UINavigationController*)(self.window.rootViewController) popToRootViewControllerAnimated:NO];
+    
+    UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    VerificationTouchIDVC *vc = [board instantiateViewControllerWithIdentifier:@"VerificationTouchIDVC"];
+    [(UINavigationController*)(self.window.rootViewController) presentViewController:vc
+                                                                            animated:NO
+                                                                          completion:^{}];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8CDC99DEB99A05E6411C5E26 /* libPods-PassWord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEFE4E8ECF690B02F0DD60F /* libPods-PassWord.a */; };
+		D00302EF1B12AFC800778C33 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00302EE1B12AFC800778C33 /* LocalAuthentication.framework */; };
+		D00302F21B12AFFC00778C33 /* VerificationTouchIDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D00302F11B12AFFC00778C33 /* VerificationTouchIDVC.m */; };
+		D01B72741B1834EB00C7F947 /* SecurityStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = D01B72711B1834EB00C7F947 /* SecurityStrategy.m */; };
+		D01B72751B1834EB00C7F947 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D01B72731B1834EB00C7F947 /* UIImage+ImageEffects.m */; };
+		D04FA1BB1B4E16F600C0E2F9 /* MF_Base64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D04FA1BA1B4E16F600C0E2F9 /* MF_Base64Additions.m */; };
 		D081AF981B0F0805006F0C2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D081AF971B0F0805006F0C2F /* main.m */; };
 		D081AF9B1B0F0805006F0C2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D081AF9A1B0F0805006F0C2F /* AppDelegate.m */; };
 		D081AF9E1B0F0805006F0C2F /* PassWord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D081AF9C1B0F0805006F0C2F /* PassWord.xcdatamodeld */; };
@@ -14,20 +20,27 @@
 		D081AFA41B0F0805006F0C2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D081AFA21B0F0805006F0C2F /* Main.storyboard */; };
 		D081AFA61B0F0805006F0C2F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D081AFA51B0F0805006F0C2F /* Images.xcassets */; };
 		D081AFA91B0F0805006F0C2F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D081AFA71B0F0805006F0C2F /* LaunchScreen.xib */; };
-		D081AFB51B0F0805006F0C2F /* PassWordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D081AFB41B0F0805006F0C2F /* PassWordTests.m */; };
+		D081AFC11B0F0E80006F0C2F /* AddAndShowDataTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D081AFC01B0F0E80006F0C2F /* AddAndShowDataTVC.m */; };
+		D081AFC51B0F11CB006F0C2F /* UserDef.m in Sources */ = {isa = PBXBuildFile; fileRef = D081AFC41B0F11CB006F0C2F /* UserDef.m */; };
+		D081AFC91B0F156D006F0C2F /* PwdData.m in Sources */ = {isa = PBXBuildFile; fileRef = D081AFC81B0F156D006F0C2F /* PwdData.m */; };
+		D081AFCB1B0F281B006F0C2F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D081AFCA1B0F281B006F0C2F /* MessageUI.framework */; };
+		D0EE501C1B5651FA00C0D3EB /* NSString+GetPinYinFirstChar.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EE501B1B5651FA00C0D3EB /* NSString+GetPinYinFirstChar.m */; };
+		D0F297C71B15A9D100539BD5 /* PassWord.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F297C61B15A9D100539BD5 /* PassWord.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		D081AFAF1B0F0805006F0C2F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D081AF8A1B0F0805006F0C2F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D081AF911B0F0805006F0C2F;
-			remoteInfo = PassWord;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		569FB95851D10D82ED372F0C /* Pods-PassWord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassWord.release.xcconfig"; path = "Pods/Target Support Files/Pods-PassWord/Pods-PassWord.release.xcconfig"; sourceTree = "<group>"; };
+		9EEFE4E8ECF690B02F0DD60F /* libPods-PassWord.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PassWord.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0611E5A1FFDD15484C8F765 /* Pods-PassWord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassWord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PassWord/Pods-PassWord.debug.xcconfig"; sourceTree = "<group>"; };
+		D00302EE1B12AFC800778C33 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		D00302F01B12AFFC00778C33 /* VerificationTouchIDVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerificationTouchIDVC.h; sourceTree = "<group>"; };
+		D00302F11B12AFFC00778C33 /* VerificationTouchIDVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerificationTouchIDVC.m; sourceTree = "<group>"; };
+		D01B72701B1834EB00C7F947 /* SecurityStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityStrategy.h; sourceTree = "<group>"; };
+		D01B72711B1834EB00C7F947 /* SecurityStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecurityStrategy.m; sourceTree = "<group>"; };
+		D01B72721B1834EB00C7F947 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		D01B72731B1834EB00C7F947 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		D04FA1B91B4E16F600C0E2F9 /* MF_Base64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MF_Base64Additions.h; sourceTree = "<group>"; };
+		D04FA1BA1B4E16F600C0E2F9 /* MF_Base64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MF_Base64Additions.m; sourceTree = "<group>"; };
 		D081AF921B0F0805006F0C2F /* PassWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D081AF961B0F0805006F0C2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D081AF971B0F0805006F0C2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -39,9 +52,17 @@
 		D081AFA31B0F0805006F0C2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D081AFA51B0F0805006F0C2F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D081AFA81B0F0805006F0C2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		D081AFAE1B0F0805006F0C2F /* PassWordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PassWordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D081AFB31B0F0805006F0C2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D081AFB41B0F0805006F0C2F /* PassWordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PassWordTests.m; sourceTree = "<group>"; };
+		D081AFBF1B0F0E80006F0C2F /* AddAndShowDataTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAndShowDataTVC.h; sourceTree = "<group>"; };
+		D081AFC01B0F0E80006F0C2F /* AddAndShowDataTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAndShowDataTVC.m; sourceTree = "<group>"; };
+		D081AFC31B0F11CB006F0C2F /* UserDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDef.h; sourceTree = "<group>"; };
+		D081AFC41B0F11CB006F0C2F /* UserDef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDef.m; sourceTree = "<group>"; };
+		D081AFC71B0F156D006F0C2F /* PwdData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PwdData.h; sourceTree = "<group>"; };
+		D081AFC81B0F156D006F0C2F /* PwdData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PwdData.m; sourceTree = "<group>"; };
+		D081AFCA1B0F281B006F0C2F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		D0EE501A1B5651FA00C0D3EB /* NSString+GetPinYinFirstChar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GetPinYinFirstChar.h"; sourceTree = "<group>"; };
+		D0EE501B1B5651FA00C0D3EB /* NSString+GetPinYinFirstChar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GetPinYinFirstChar.m"; sourceTree = "<group>"; };
+		D0F297C51B15A9D100539BD5 /* PassWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassWord.h; sourceTree = "<group>"; };
+		D0F297C61B15A9D100539BD5 /* PassWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassWord.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,13 +70,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D081AFAB1B0F0805006F0C2F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				D00302EF1B12AFC800778C33 /* LocalAuthentication.framework in Frameworks */,
+				D081AFCB1B0F281B006F0C2F /* MessageUI.framework in Frameworks */,
+				8CDC99DEB99A05E6411C5E26 /* libPods-PassWord.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,8 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				D081AF941B0F0805006F0C2F /* PassWord */,
-				D081AFB11B0F0805006F0C2F /* PassWordTests */,
 				D081AF931B0F0805006F0C2F /* Products */,
+				D5DB4CAD9418C9A6D0C0F148 /* Pods */,
+				EBC8C82F8289BAD5C08855BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				D081AF921B0F0805006F0C2F /* PassWord.app */,
-				D081AFAE1B0F0805006F0C2F /* PassWordTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +100,9 @@
 		D081AF941B0F0805006F0C2F /* PassWord */ = {
 			isa = PBXGroup;
 			children = (
+				D081AFC61B0F1554006F0C2F /* Data */,
+				D081AFC21B0F11CB006F0C2F /* Tool */,
+				D081AFBE1B0F0C4C006F0C2F /* Ctrl */,
 				D081AF991B0F0805006F0C2F /* AppDelegate.h */,
 				D081AF9A1B0F0805006F0C2F /* AppDelegate.m */,
 				D081AF9F1B0F0805006F0C2F /* ViewController.h */,
@@ -99,27 +119,68 @@
 		D081AF951B0F0805006F0C2F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D00302EE1B12AFC800778C33 /* LocalAuthentication.framework */,
+				D081AFCA1B0F281B006F0C2F /* MessageUI.framework */,
 				D081AF961B0F0805006F0C2F /* Info.plist */,
 				D081AF971B0F0805006F0C2F /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D081AFB11B0F0805006F0C2F /* PassWordTests */ = {
+		D081AFBE1B0F0C4C006F0C2F /* Ctrl */ = {
 			isa = PBXGroup;
 			children = (
-				D081AFB41B0F0805006F0C2F /* PassWordTests.m */,
-				D081AFB21B0F0805006F0C2F /* Supporting Files */,
+				D081AFBF1B0F0E80006F0C2F /* AddAndShowDataTVC.h */,
+				D081AFC01B0F0E80006F0C2F /* AddAndShowDataTVC.m */,
+				D00302F01B12AFFC00778C33 /* VerificationTouchIDVC.h */,
+				D00302F11B12AFFC00778C33 /* VerificationTouchIDVC.m */,
 			);
-			path = PassWordTests;
+			name = Ctrl;
 			sourceTree = "<group>";
 		};
-		D081AFB21B0F0805006F0C2F /* Supporting Files */ = {
+		D081AFC21B0F11CB006F0C2F /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				D081AFB31B0F0805006F0C2F /* Info.plist */,
+				D04FA1B91B4E16F600C0E2F9 /* MF_Base64Additions.h */,
+				D04FA1BA1B4E16F600C0E2F9 /* MF_Base64Additions.m */,
+				D01B72701B1834EB00C7F947 /* SecurityStrategy.h */,
+				D01B72711B1834EB00C7F947 /* SecurityStrategy.m */,
+				D01B72721B1834EB00C7F947 /* UIImage+ImageEffects.h */,
+				D01B72731B1834EB00C7F947 /* UIImage+ImageEffects.m */,
+				D081AFC31B0F11CB006F0C2F /* UserDef.h */,
+				D081AFC41B0F11CB006F0C2F /* UserDef.m */,
+				D0EE501A1B5651FA00C0D3EB /* NSString+GetPinYinFirstChar.h */,
+				D0EE501B1B5651FA00C0D3EB /* NSString+GetPinYinFirstChar.m */,
 			);
-			name = "Supporting Files";
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		D081AFC61B0F1554006F0C2F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D081AFC71B0F156D006F0C2F /* PwdData.h */,
+				D081AFC81B0F156D006F0C2F /* PwdData.m */,
+				D0F297C51B15A9D100539BD5 /* PassWord.h */,
+				D0F297C61B15A9D100539BD5 /* PassWord.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		D5DB4CAD9418C9A6D0C0F148 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B0611E5A1FFDD15484C8F765 /* Pods-PassWord.debug.xcconfig */,
+				569FB95851D10D82ED372F0C /* Pods-PassWord.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EBC8C82F8289BAD5C08855BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9EEFE4E8ECF690B02F0DD60F /* libPods-PassWord.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D081AFB81B0F0805006F0C2F /* Build configuration list for PBXNativeTarget "PassWord" */;
 			buildPhases = (
+				79F7287F884483E47CB53120 /* Check Pods Manifest.lock */,
 				D081AF8E1B0F0805006F0C2F /* Sources */,
 				D081AF8F1B0F0805006F0C2F /* Frameworks */,
 				D081AF901B0F0805006F0C2F /* Resources */,
+				D0A776F538A1B723A20BA03A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -141,24 +204,6 @@
 			productName = PassWord;
 			productReference = D081AF921B0F0805006F0C2F /* PassWord.app */;
 			productType = "com.apple.product-type.application";
-		};
-		D081AFAD1B0F0805006F0C2F /* PassWordTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D081AFBB1B0F0805006F0C2F /* Build configuration list for PBXNativeTarget "PassWordTests" */;
-			buildPhases = (
-				D081AFAA1B0F0805006F0C2F /* Sources */,
-				D081AFAB1B0F0805006F0C2F /* Frameworks */,
-				D081AFAC1B0F0805006F0C2F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D081AFB01B0F0805006F0C2F /* PBXTargetDependency */,
-			);
-			name = PassWordTests;
-			productName = PassWordTests;
-			productReference = D081AFAE1B0F0805006F0C2F /* PassWordTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -171,10 +216,7 @@
 				TargetAttributes = {
 					D081AF911B0F0805006F0C2F = {
 						CreatedOnToolsVersion = 6.3.1;
-					};
-					D081AFAD1B0F0805006F0C2F = {
-						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = D081AF911B0F0805006F0C2F;
+						DevelopmentTeam = EF8Y32ZK92;
 					};
 				};
 			};
@@ -183,7 +225,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = D081AF891B0F0805006F0C2F;
@@ -192,7 +233,6 @@
 			projectRoot = "";
 			targets = (
 				D081AF911B0F0805006F0C2F /* PassWord */,
-				D081AFAD1B0F0805006F0C2F /* PassWordTests */,
 			);
 		};
 /* End PBXProject section */
@@ -208,14 +248,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D081AFAC1B0F0805006F0C2F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		79F7287F884483E47CB53120 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
-/* End PBXResourcesBuildPhase section */
+		D0A776F538A1B723A20BA03A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PassWord/Pods-PassWord-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D081AF8E1B0F0805006F0C2F /* Sources */ = {
@@ -223,29 +289,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				D081AF9E1B0F0805006F0C2F /* PassWord.xcdatamodeld in Sources */,
+				D081AFC91B0F156D006F0C2F /* PwdData.m in Sources */,
 				D081AF9B1B0F0805006F0C2F /* AppDelegate.m in Sources */,
 				D081AFA11B0F0805006F0C2F /* ViewController.m in Sources */,
+				D04FA1BB1B4E16F600C0E2F9 /* MF_Base64Additions.m in Sources */,
 				D081AF981B0F0805006F0C2F /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D081AFAA1B0F0805006F0C2F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D081AFB51B0F0805006F0C2F /* PassWordTests.m in Sources */,
+				D081AFC51B0F11CB006F0C2F /* UserDef.m in Sources */,
+				D01B72741B1834EB00C7F947 /* SecurityStrategy.m in Sources */,
+				D0EE501C1B5651FA00C0D3EB /* NSString+GetPinYinFirstChar.m in Sources */,
+				D01B72751B1834EB00C7F947 /* UIImage+ImageEffects.m in Sources */,
+				D00302F21B12AFFC00778C33 /* VerificationTouchIDVC.m in Sources */,
+				D0F297C71B15A9D100539BD5 /* PassWord.m in Sources */,
+				D081AFC11B0F0E80006F0C2F /* AddAndShowDataTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D081AFB01B0F0805006F0C2F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D081AF911B0F0805006F0C2F /* PassWord */;
-			targetProxy = D081AFAF1B0F0805006F0C2F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D081AFA21B0F0805006F0C2F /* Main.storyboard */ = {
@@ -349,9 +408,12 @@
 		};
 		D081AFB91B0F0805006F0C2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0611E5A1FFDD15484C8F765 /* Pods-PassWord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PassWord/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -359,45 +421,14 @@
 		};
 		D081AFBA1B0F0805006F0C2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 569FB95851D10D82ED372F0C /* Pods-PassWord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PassWord/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		D081AFBC1B0F0805006F0C2F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PassWordTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PassWord.app/PassWord";
-			};
-			name = Debug;
-		};
-		D081AFBD1B0F0805006F0C2F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PassWordTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PassWord.app/PassWord";
 			};
 			name = Release;
 		};
@@ -420,14 +451,7 @@
 				D081AFBA1B0F0805006F0C2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		D081AFBB1B0F0805006F0C2F /* Build configuration list for PBXNativeTarget "PassWordTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D081AFBC1B0F0805006F0C2F /* Debug */,
-				D081AFBD1B0F0805006F0C2F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
