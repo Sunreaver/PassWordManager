@@ -167,7 +167,19 @@ UIScrollViewDelegate>
     {
         [self initSearchBar];
     }
-    [self.searchBar resignFirstResponder];
+    else if (offset.y > 0)
+    {
+        [self.searchBar resignFirstResponder];
+    }
+}
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    CGPoint offset = scrollView.contentOffset;
+    if (self.tableView.tableHeaderView && offset.y <= 0)
+    {
+        [self.searchBar becomeFirstResponder];
+    }
 }
 
 #pragma mark -发邮件
