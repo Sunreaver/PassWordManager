@@ -245,7 +245,7 @@ UIScrollViewDelegate>
     UISearchBar *bar = [[UISearchBar alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.frame.size.width, 40)];
     bar.placeholder = @"搜索:介绍、帐号";
     bar.delegate = self;
-    bar.keyboardType = UIKeyboardTypeURL;
+    bar.keyboardType = UIKeyboardTypeASCIICapable;
     [bar setSearchBarStyle:UISearchBarStyleMinimal];
     self.searchBar = bar;
     [self.tableView setTableHeaderView:bar];

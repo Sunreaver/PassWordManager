@@ -73,9 +73,9 @@
 */
 
 - (void)animateUnlock{
-    [UIView animateWithDuration:0.5
+    [UIView animateWithDuration:1.0
                      animations:^{
-                         [self.bg_img setTransform:CGAffineTransformScale(self.bg_img.transform, 100.0, 100.0)];
+                         [self.bg_img setTransform:CGAffineTransformScale(self.bg_img.transform, 1.5, 1.5)];
                          [self.bg_img setAlpha:0.0];
                      } completion:^(BOOL finished) {
                          [self dismissViewControllerAnimated:NO
