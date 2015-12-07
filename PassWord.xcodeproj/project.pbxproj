@@ -26,6 +26,8 @@
 		D081AFCB1B0F281B006F0C2F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D081AFCA1B0F281B006F0C2F /* MessageUI.framework */; };
 		D0EE501C1B5651FA00C0D3EB /* NSString+GetPinYinFirstChar.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EE501B1B5651FA00C0D3EB /* NSString+GetPinYinFirstChar.m */; };
 		D0F297C71B15A9D100539BD5 /* PassWord.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F297C61B15A9D100539BD5 /* PassWord.m */; };
+		D0F29A9F1C154EB80086BEFE /* CoreSpotlightData.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F29A9E1C154EB80086BEFE /* CoreSpotlightData.m */; };
+		D0F29AA21C15533C0086BEFE /* MD5Encode.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F29AA11C15533C0086BEFE /* MD5Encode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,10 @@
 		D0EE501B1B5651FA00C0D3EB /* NSString+GetPinYinFirstChar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GetPinYinFirstChar.m"; sourceTree = "<group>"; };
 		D0F297C51B15A9D100539BD5 /* PassWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassWord.h; sourceTree = "<group>"; };
 		D0F297C61B15A9D100539BD5 /* PassWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassWord.m; sourceTree = "<group>"; };
+		D0F29A9D1C154EB80086BEFE /* CoreSpotlightData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSpotlightData.h; sourceTree = "<group>"; };
+		D0F29A9E1C154EB80086BEFE /* CoreSpotlightData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreSpotlightData.m; sourceTree = "<group>"; };
+		D0F29AA01C15533C0086BEFE /* MD5Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5Encode.h; sourceTree = "<group>"; };
+		D0F29AA11C15533C0086BEFE /* MD5Encode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD5Encode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,10 @@
 		D081AFC21B0F11CB006F0C2F /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				D0F29AA01C15533C0086BEFE /* MD5Encode.h */,
+				D0F29AA11C15533C0086BEFE /* MD5Encode.m */,
+				D0F29A9D1C154EB80086BEFE /* CoreSpotlightData.h */,
+				D0F29A9E1C154EB80086BEFE /* CoreSpotlightData.m */,
 				D04FA1B91B4E16F600C0E2F9 /* MF_Base64Additions.h */,
 				D04FA1BA1B4E16F600C0E2F9 /* MF_Base64Additions.m */,
 				D01B72701B1834EB00C7F947 /* SecurityStrategy.h */,
@@ -288,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F29AA21C15533C0086BEFE /* MD5Encode.m in Sources */,
 				D081AF9E1B0F0805006F0C2F /* PassWord.xcdatamodeld in Sources */,
 				D081AFC91B0F156D006F0C2F /* PwdData.m in Sources */,
 				D081AF9B1B0F0805006F0C2F /* AppDelegate.m in Sources */,
@@ -295,6 +306,7 @@
 				D04FA1BB1B4E16F600C0E2F9 /* MF_Base64Additions.m in Sources */,
 				D081AF981B0F0805006F0C2F /* main.m in Sources */,
 				D081AFC51B0F11CB006F0C2F /* UserDef.m in Sources */,
+				D0F29A9F1C154EB80086BEFE /* CoreSpotlightData.m in Sources */,
 				D01B72741B1834EB00C7F947 /* SecurityStrategy.m in Sources */,
 				D0EE501C1B5651FA00C0D3EB /* NSString+GetPinYinFirstChar.m in Sources */,
 				D01B72751B1834EB00C7F947 /* UIImage+ImageEffects.m in Sources */,

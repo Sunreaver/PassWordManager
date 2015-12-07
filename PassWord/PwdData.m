@@ -8,6 +8,7 @@
 
 #import "PwdData.h"
 #import "UserDef.h"
+#import "CoreSpotlightData.h"
 
 static NSMutableArray *s_data = nil;
 static NSMutableArray *s_index = nil;
@@ -17,7 +18,7 @@ static BOOL s_bDataChange = NO;
 @implementation PwdData
 
 #pragma mark -初始化
-+(NSArray*)data
++(NSArray<PassWord*>*)data
 {
     if (!s_data)
     {
@@ -31,6 +32,7 @@ static BOOL s_bDataChange = NO;
         {
             s_data = [NSMutableArray array];
         }
+        [CoreSpotlightData MakeCoreSpotlightListWithArr:s_data];
     }
     return s_data;
 }
@@ -42,7 +44,7 @@ static BOOL s_bDataChange = NO;
         s_index = [NSMutableArray array];
         for (NSUInteger i = 0; i < [PwdData data].count; ++i)
         {
-            [s_index addObject:[NSNumber numberWithUnsignedInteger:i]];
+            [s_index addObject:@(i)];
         }
     }
     return s_index;
@@ -74,11 +76,13 @@ static BOOL s_bDataChange = NO;
         [s_data insertObject:PassWordInit((@{PWD_Tip:tip,PWD_Text:pwd,PWD_Account:acc})) atIndex:0];
     }
     [PwdData searchPwdListWithKey:s_searchKey];
+    [CoreSpotlightData MakeCoreSpotlightListWithData:s_data[0]];
 }
 
 +(void)EditDataWithTip:(NSString *)tip PassWord:(NSString *)pwd Account:(NSString *)acc Index:(NSInteger)index
 {
     s_bDataChange = YES;
+    PassWord *pw = s_data[index];
     if (acc.length == 0)
     {
         [s_data replaceObjectAtIndex:index withObject:PassWordInit((@{PWD_Tip:tip,PWD_Text:pwd}))];
@@ -88,16 +92,20 @@ static BOOL s_bDataChange = NO;
         [s_data replaceObjectAtIndex:index withObject:PassWordInit((@{PWD_Tip:tip,PWD_Text:pwd,PWD_Account:acc}))];
     }
     [PwdData searchPwdListWithKey:s_searchKey];
+    [CoreSpotlightData DelCoreSpotlightWithData:pw];
+    [CoreSpotlightData MakeCoreSpotlightListWithData:s_data[index]];
 }
 
 +(void)DeleteDataAtIndex:(NSUInteger)index
 {
     s_bDataChange = YES;
+    PassWord *pw = s_data[index];
     if (index < s_data.count)
     {
         [s_data removeObjectAtIndex:index];
     }
     [PwdData searchPwdListWithKey:s_searchKey];
+    [CoreSpotlightData DelCoreSpotlightWithData:pw];
 }
 
 +(void)moveRow:(NSInteger)move ToRow:(NSInteger)to

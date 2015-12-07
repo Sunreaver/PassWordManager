@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) NSString *tip;//介绍
 @property (nonatomic, readonly) NSString *acc;//帐号
 @property (nonatomic, readonly) NSString *tip_pinyin;//介绍的拼音
+@property (nonatomic, readonly) id pwid; //唯一标识，用来spotlight搜索
 
 +(instancetype)initWithData:(NSDictionary*)data;
 @end

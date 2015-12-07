@@ -14,7 +14,7 @@
 @interface PwdData : NSObject
 
 +(NSArray*)pwdList;
-+(NSArray*)data;//PassWord
++(NSArray<PassWord*>*)data;//PassWord
 
 +(void)storageData;
 +(void)AddDataWithTip:(NSString*)tip PassWord:(NSString*)pwd Account:(NSString*)acc;
