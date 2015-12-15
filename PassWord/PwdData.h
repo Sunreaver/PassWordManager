@@ -13,7 +13,7 @@
 
 @interface PwdData : NSObject
 
-+(NSArray*)pwdList;
++(NSArray<NSNumber*>*)pwdList;
 +(NSArray<PassWord*>*)data;//PassWord
 
 +(void)storageData;

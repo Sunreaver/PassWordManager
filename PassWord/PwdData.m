@@ -32,12 +32,12 @@ static BOOL s_bDataChange = NO;
         {
             s_data = [NSMutableArray array];
         }
-        [CoreSpotlightData MakeCoreSpotlightListWithArr:s_data];
+//        [CoreSpotlightData MakeCoreSpotlightListWithArr:s_data];
     }
     return s_data;
 }
 
-+(NSArray*)pwdList
++(NSArray<NSNumber*>*)pwdList
 {
     if (!s_index)
     {

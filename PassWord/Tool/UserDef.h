@@ -5,6 +5,8 @@
 //  Created by Wei Tan on 12-8-28.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
+#define WEAK_SELF(weakself) __weak __typeof(self)weakself = self;
+#define STRONG_SELF(strongself) __typeof(wself)strongself = wself;
 
 #import <UIKit/UIKit.h>
 
