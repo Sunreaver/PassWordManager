@@ -19,7 +19,7 @@
         CSSearchableItemAttributeSet *attributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:@"views"];
         attributeSet.displayName = data.tip;
         attributeSet.keywords = @[data.tip, data.tip_pinyin];
-        attributeSet.contentDescription = data.pwd;
+        attributeSet.contentDescription = [NSString stringWithFormat:@"%@ <%@>", data.pwd, data.acc];
 //        UIImage *thumbImage = [UIImage imageNamed:[NSString stringWithFormat:@"icon_%@.png",obj]];
 //        attributeSet.thumbnailData = UIImagePNGRepresentation(thumbImage);//beta 1 there is a bug
         CSSearchableItem *item = [[CSSearchableItem alloc]
@@ -41,7 +41,7 @@
     CSSearchableItemAttributeSet *attributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:@"views"];
     attributeSet.displayName = data.tip;
     attributeSet.keywords = @[data.tip, data.tip_pinyin];
-    attributeSet.contentDescription = data.pwd;
+    attributeSet.contentDescription = [NSString stringWithFormat:@"%@ <%@>", data.pwd, data.acc];
     
     CSSearchableItem *item = [[CSSearchableItem alloc]
                               initWithUniqueIdentifier:data.pwid
