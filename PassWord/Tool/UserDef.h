@@ -6,7 +6,7 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 #define WEAK_SELF(weakself) __weak __typeof(self)weakself = self;
-#define STRONG_SELF(strongself) __typeof(wself)strongself = wself;
+#define STRONG_SELF(weakself, strongself) __typeof(weakself)strongself = weakself;
 
 #import <UIKit/UIKit.h>
 
