@@ -193,6 +193,46 @@ UIScrollViewDelegate>
     [av setAlertViewStyle:UIAlertViewStyleLoginAndPasswordInput];
     [av setTag:-1];
     [av show];
+    
+    /*
+    //添加数据
+    NSString *textToShare = @"无数据";
+    NSArray *pwdData = [NSKeyedUnarchiver unarchiveObjectWithFile:File_Path(@"com.tmp.catch")];
+    if (pwdData)
+    {
+        NSString *outStr = @"";
+        for (PassWord *pw in pwdData)
+        {
+            outStr = [outStr stringByAppendingString:pw.description];
+            outStr = [outStr stringByAppendingString:@"\n"];
+        }
+        textToShare = [[outStr base64String] base64String];
+    }
+    
+    UIImage *imageToShare = [UIImage imageNamed:@"bg"];
+    NSArray *activityItems = @[imageToShare, textToShare];
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    activityVC.excludedActivityTypes = @[UIActivityTypeAssignToContact,
+                                         UIActivityTypeSaveToCameraRoll,
+                                         UIActivityTypeAddToReadingList,
+                                         UIActivityTypePostToFlickr,
+                                         UIActivityTypePostToVimeo,
+                                         UIActivityTypeOpenInIBooks,
+                                         UIActivityTypePostToTwitter,
+                                         UIActivityTypePostToFacebook,
+                                         UIActivityTypePostToWeibo,
+                                         UIActivityTypePostToTencentWeibo];
+    
+    WEAK_SELF(weakself);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            STRONG_SELF(weakself, sself);
+            //以模态的方式展现activityVC。
+            [sself presentViewController:activityVC animated:YES completion:nil];
+        });
+    });
+     */
 }
 
 -(void)SendMail
@@ -203,8 +243,8 @@ UIScrollViewDelegate>
     [mc setSubject:@"No.007 Comming!"];
     
     [mc setToRecipients:[NSArray arrayWithObjects:@"tanwei.rush@gmail.com", nil]];
-//    [mc setCcRecipients:[NSArray arrayWithObject:@""]];
-    [mc setBccRecipients:[NSArray arrayWithObject:@"tanwei.rush@qq.com"]];
+//    [mc setCcRecipients:[NSArray arrayWithObject:@"xx"]];
+//    [mc setBccRecipients:[NSArray arrayWithObject:@"xx@qq.com"]];
     
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     df.dateFormat = @"yyyy-MM-dd HH:mm:ss";
