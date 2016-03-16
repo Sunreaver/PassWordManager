@@ -18,6 +18,8 @@
     
     unsigned char result[32];
     
+    memset(result, 0, sizeof(result));
+    
     CC_MD5( cStr, (int)strlen(cStr), result );
     
     return [NSString stringWithFormat:
