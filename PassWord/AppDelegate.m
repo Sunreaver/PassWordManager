@@ -11,6 +11,7 @@
 #import "UserDef.h"
 #import "VerificationTouchIDVC.h"
 #import "SecurityStrategy.h"
+#import "AddAndShowDataTVC.h"
 
 @interface AppDelegate ()
 
@@ -50,17 +51,39 @@
     
     [(UINavigationController*)(self.window.rootViewController) popToRootViewControllerAnimated:NO];
     
-    UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    VerificationTouchIDVC *vc = [board instantiateViewControllerWithIdentifier:@"VerificationTouchIDVC"];
-    [(UINavigationController*)(self.window.rootViewController) presentViewController:vc
-                                                                            animated:NO
-                                                                          completion:^{}];
+//    UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    VerificationTouchIDVC *vc = [board instantiateViewControllerWithIdentifier:@"VerificationTouchIDVC"];
+//    [(UINavigationController*)(self.window.rootViewController) presentViewController:vc
+//                                                                            animated:NO
+//                                                                          completion:^{}];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+
+-(BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
+{
+    id idetifier = userActivity.userInfo[@"kCSSearchableItemActivityIdentifier"];
+    int i = 0;
+    for (PassWord *pw in [PwdData data])
+    {
+        if ([pw.pwid isEqualToString:idetifier])
+        {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                AddAndShowDataTVC *vc = [board instantiateViewControllerWithIdentifier:@"AddAndShowDataTVC"];
+                [vc setIndex:[NSNumber numberWithUnsignedInteger:i]];
+                UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+                [navigationController pushViewController:vc animated:YES];
+            });
+            break;
+        }
+        ++i;
+    }
+    return YES;
 }
 
 #pragma mark - Core Data stack
