@@ -90,7 +90,7 @@
         self.pwd = [aDecoder decodeObjectForKey:PWD_Text];
         self.acc = [aDecoder decodeObjectForKey:PWD_Account];
         self.tip_pinyin = [aDecoder decodeObjectForKey:PWD_TipPinYin];
-        self.pwid = [aDecoder decodeObjectForKey:@"pwid"];
+        self.pwid = [self makePwid];
     }
     return self;
 }
@@ -101,6 +101,5 @@
     [aCoder encodeObject:self.pwd forKey:PWD_Text];
     [aCoder encodeObject:self.acc forKey:PWD_Account];
     [aCoder encodeObject:self.tip_pinyin forKey:PWD_TipPinYin];
-    [aCoder encodeObject:self.pwid forKey:@"pwid"];
 }
 @end

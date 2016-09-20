@@ -32,7 +32,7 @@ static BOOL s_bDataChange = NO;
         {
             s_data = [NSMutableArray array];
         }
-//        [CoreSpotlightData MakeCoreSpotlightListWithArr:s_data];
+        [CoreSpotlightData MakeCoreSpotlightListWithArr:s_data];
     }
     return s_data;
 }

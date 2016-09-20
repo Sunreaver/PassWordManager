@@ -237,24 +237,7 @@ UIScrollViewDelegate>
 
 -(void)SendMail
 {
-    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-    mc.mailComposeDelegate = self;
-    
-    [mc setSubject:@"No.007 Comming!"];
-    
-    [mc setToRecipients:[NSArray arrayWithObjects:@"tanwei.rush@gmail.com", nil]];
-//    [mc setCcRecipients:[NSArray arrayWithObject:@"xx"]];
-//    [mc setBccRecipients:[NSArray arrayWithObject:@"xx@qq.com"]];
-    
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    df.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-    [mc setMessageBody:[df stringFromDate:[NSDate date]] isHTML:NO];
-    
-    // 添加图片bg
-    UIImage *addPic = [UIImage imageNamed:@"bg"];
-    NSData *imageData = UIImageJPEGRepresentation(addPic, 0.1);
-    [mc addAttachmentData:imageData mimeType:@"jpg" fileName:@"TakeCare.jpg"];
-    
+    NSString *base64String = @"";
     //添加附件数据
     NSArray *pwdData = [NSKeyedUnarchiver unarchiveObjectWithFile:File_Path(@"com.tmp.catch")];
     if (pwdData)
@@ -265,12 +248,52 @@ UIScrollViewDelegate>
             outStr = [outStr stringByAppendingString:pw.description];
             outStr = [outStr stringByAppendingString:@"\n"];
         }
-        NSString *base64String = [[outStr base64String] base64String];
-        [mc addAttachmentData:[base64String dataUsingEncoding:NSUTF8StringEncoding] mimeType:@"file/catch" fileName:@"No.007_catch"];
+        base64String = [[outStr base64String] base64String];
     }
     
-    [self presentViewController:mc animated:YES completion:^{
-    }];
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+        mc.mailComposeDelegate = self;
+        
+        [mc setSubject:@"No.007 Comming!"];
+        
+        [mc setToRecipients:[NSArray arrayWithObjects:@"tanwei.rush@gmail.com", nil]];
+        //    [mc setCcRecipients:[NSArray arrayWithObject:@"xx"]];
+        //    [mc setBccRecipients:[NSArray arrayWithObject:@"xx@qq.com"]];
+        
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        df.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+        [mc setMessageBody:[df stringFromDate:[NSDate date]] isHTML:NO];
+        
+        // 添加图片bg
+        UIImage *addPic = [UIImage imageNamed:@"bg"];
+        NSData *imageData = UIImageJPEGRepresentation(addPic, 0.1);
+        [mc addAttachmentData:imageData mimeType:@"jpg" fileName:@"TakeCare.jpg"];
+        [mc addAttachmentData:[base64String dataUsingEncoding:NSUTF8StringEncoding] mimeType:@"file/catch" fileName:@"No.007_catch"];
+        
+        
+        [self presentViewController:mc animated:YES completion:^{
+        }];
+    } else {
+        NSArray *activityItems = @[@"No.007", base64String];
+        
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+        activityVC.excludedActivityTypes = @[UIActivityTypeAssignToContact,
+                                             UIActivityTypeSaveToCameraRoll,
+                                             UIActivityTypePostToTwitter,
+                                             UIActivityTypePostToFacebook,
+                                             UIActivityTypePostToWeibo,
+                                             UIActivityTypeCopyToPasteboard];
+        
+        WEAK_SELF(weakself);
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                STRONG_SELF(weakself, sself);
+                //以模态的方式展现activityVC。
+                [sself presentViewController:activityVC animated:YES completion:nil];
+            });
+        });
+    }
 }
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
@@ -329,8 +352,9 @@ UIScrollViewDelegate>
     {//删除
         [PwdData DeleteDataAtIndex:IndexInPwdList(alertView.tag)];
         
-        [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:alertView.tag inSection:0]]
-                              withRowAnimation:UITableViewRowAnimationFade];
+//        [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:alertView.tag inSection:0]]
+//                              withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView reloadData];
         return;
     }
     else if (alertView.tag < 0)
